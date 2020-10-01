@@ -1,8 +1,9 @@
 import React from "react"
 
+import { graphql } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 
-import { Column } from "../components"
+import { Column, Head } from "../components"
 import { BackLayout, MobileContainer, Texts } from "../containers"
 import { colors } from "../utils"
 
@@ -34,9 +35,12 @@ const Wrapper = styled.div`
   }
 `
 
-export default () => {
+export default ({ data }) => {
+  const siteTitle = data.site.siteMetadata?.title || `Title`
+
   return (
     <>
+      <Head title={siteTitle} />
       <GlobalStyle />
       <Container>
         <Wrapper>
@@ -51,3 +55,13 @@ export default () => {
     </>
   )
 }
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
