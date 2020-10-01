@@ -55,7 +55,7 @@ const Container = styled.div`
         width: 75%;
         overflow: hidden;
         white-space: nowrap;
-        color: #d879ff;
+        color: ${colors.text.paleViolet};
 
         svg {
           margin-right: 0.5rem;
