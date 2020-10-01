@@ -1,10 +1,16 @@
 import React from "react"
 
-import styled from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
 import { Column } from "../components"
 import { BackLayout, MobileContainer } from "../containers"
 import { colors } from "../utils"
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+  }
+`
 
 const Container = styled.div`
   display: flex;
@@ -119,23 +125,26 @@ const Wrapper = styled.div`
 
 export default () => {
   return (
-    <Container>
-      <Wrapper>
-        <BackLayout>
-          <Column.Mobile className="mobile-container">
-            <MobileContainer />
-          </Column.Mobile>
-          <Column.Description className="description-container">
-            <h1>Simple booking</h1>
-            <p>
-              Stay in touch with our dog walkers through the chat interface.
-              This makes it easy to discuss arrangements and make bookings. Once
-              the walk has been completed you can rate your walker and book
-              again all through the chat.
-            </p>
-          </Column.Description>
-        </BackLayout>
-      </Wrapper>
-    </Container>
+    <>
+      <GlobalStyle />
+      <Container>
+        <Wrapper>
+          <BackLayout>
+            <Column.Mobile className="mobile-container">
+              <MobileContainer />
+            </Column.Mobile>
+            <Column.Description className="description-container">
+              <h1>Simple booking</h1>
+              <p>
+                Stay in touch with our dog walkers through the chat interface.
+                This makes it easy to discuss arrangements and make bookings.
+                Once the walk has been completed you can rate your walker and
+                book again all through the chat.
+              </p>
+            </Column.Description>
+          </BackLayout>
+        </Wrapper>
+      </Container>
+    </>
   )
 }
