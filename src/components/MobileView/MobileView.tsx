@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 
 import styled from "styled-components"
 
@@ -9,6 +9,6 @@ const Container = styled.div`
   padding: 0.6875rem;
 `
 
-export const MobileView = ({ children, ...rest }) => {
+export const MobileView: FC = ({ children, ...rest }) => {
   return <Container {...rest}>{children}</Container>
 }
