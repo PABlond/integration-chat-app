@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 
 import styled from "styled-components"
 
@@ -13,6 +13,6 @@ const Container = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
 `
 
-export const MobileView = ({ children, ...rest }) => {
+export const MobileView: FC = ({ children, ...rest }) => {
   return <Container {...rest}>{children}</Container>
 }
