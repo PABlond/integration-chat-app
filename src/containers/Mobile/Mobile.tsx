@@ -1,9 +1,6 @@
 import React from "react"
 
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import styled from "styled-components"
-import { MdKeyboardArrowLeft } from "react-icons/md"
 
 import { colors } from "../../utils"
 import { MobileView } from "./MobileView"
