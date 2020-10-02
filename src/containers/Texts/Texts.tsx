@@ -4,7 +4,7 @@ import { Column } from "../../components"
 
 export const Texts = () => {
   return (
-    <Column.Description className="description-container">
+    <Column.Description>
       <h1>Simple booking</h1>
       <p>
         Stay in touch with our dog walkers through the chat interface. This
