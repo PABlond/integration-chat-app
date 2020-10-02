@@ -5,7 +5,7 @@ import styled, { createGlobalStyle } from "styled-components"
 
 import { Column, Head } from "../components"
 import { BackLayout, MobileContainer, Texts } from "../containers"
-import { colors } from "../utils"
+import { colors, Types } from "../utils"
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   }
 `
 
-export default ({ data }) => {
+export default ({ data }: { data: { site: Types.Site } }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
 
   return (
@@ -45,7 +45,7 @@ export default ({ data }) => {
       <Container>
         <Wrapper>
           <BackLayout>
-            <Column.Mobile className="mobile-container">
+            <Column.Mobile>
               <MobileContainer />
             </Column.Mobile>
             <Texts />
