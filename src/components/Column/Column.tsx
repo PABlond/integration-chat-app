@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 
 import styled from "styled-components"
 
@@ -57,11 +57,11 @@ const DescriptionContainer = styled.div`
   }
 `
 
-const Mobile = ({ children, ...rest }) => {
+const Mobile: FC = ({ children, ...rest }) => {
   return <MobileContainer {...rest}>{children}</MobileContainer>
 }
 
-const Description = ({ children, ...rest }) => {
+const Description: FC = ({ children, ...rest }) => {
   return <DescriptionContainer {...rest}>{children}</DescriptionContainer>
 }
 
