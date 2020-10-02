@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 
 import styled from "styled-components"
 
@@ -26,7 +26,7 @@ const Background = styled.div`
   }
 `
 
-export const BackLayout = ({ children, ...rest }) => {
+export const BackLayout: FC = ({ children }) => {
   return (
     <>
       <Background />
