@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import { FaRegCircle } from "react-icons/fa"
 import styled from "styled-components"
 
-import { colors } from "../../../utils"
+import { colors, Types } from "../../../utils"
 
 const Container = styled.div`
   padding: 0.6875rem;
@@ -73,7 +73,7 @@ const Container = styled.div`
   }
 `
 
-const ImgContainer = styled(Img)`
+const ImgContainer: any = styled(Img)`
   margin-top: 0.7rem;
   margin-bottom: 0.4rem;
 
@@ -132,7 +132,6 @@ export const Discussion = () => {
           }
         `}
         render={({
-          img1,
           img1: {
             childImageSharp: { fluid: img1fluid },
           },
@@ -142,8 +141,17 @@ export const Discussion = () => {
           img3: {
             childImageSharp: { fluid: img3fluid },
           },
+        }: {
+          img1: {
+            childImageSharp: Types.ImageSharp
+          }
+          img2: {
+            childImageSharp: Types.ImageSharp
+          }
+          img3: {
+            childImageSharp: Types.ImageSharp
+          }
         }) => {
-          console.log(img1)
           return (
             <div className="me">
               <div className="inner-imgs">
